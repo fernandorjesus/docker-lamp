@@ -95,7 +95,14 @@ server {
   }
 }
 ```
-3) Pronto! Tudo que você precisa fazer agora é reiniciar os serviço
+3) Faca o apontamento do seu server name no seu hosts - No linux execute este comando:
+
+```bash
+sudo nano /etc/hosts
+$ 127.0.0.1 seuprojeto1.dev
+```
+
+4) Pronto! Tudo que você precisa fazer agora é reiniciar os serviço
 ```bash
 $ docker-compose down && docker-compose up -d
 ```
