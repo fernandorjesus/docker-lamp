@@ -1,0 +1,67 @@
+version: "3.7"
+
+services:
+  # Nginx Service Container
+  nginx:
+    image: nginx:alpine
+    container_name: webserver
+    restart: always
+    tty: true
+    ports:
+      - 80:80
+    volumes:
+      - ../www/:/var/www/html
+      - ./etc/nginx/logs/:/var/log/nginx/
+      - ./etc/nginx/sites-enabled/:/etc/nginx/conf.d
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - www-setor7g
+
+  # PHP (fpm) app container
+  php:
+    build: ./etc/php/
+    container_name: applications
+    restart: always
+    tty: true
+    volumes:
+      - ../www/:/var/www/html
+    networks:
+      - www-setor7g
+
+  # PHP (fpm) app container
+  mysql:
+    image: mysql:latest
+    container_name: database
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/cnf/:/etc/mysql/conf.d/
+      - ./mysql/data/:/var/lib/mysql/
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - www-setor7g
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8081:80"
+    restart: always
+    depends_on:
+      - mysql
+    networks:
+      - www-setor7g
+
+networks:
+  www-setor7g:
+    driver: bridge

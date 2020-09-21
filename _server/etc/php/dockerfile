@@ -1,0 +1,32 @@
+FROM php:7.4-fpm-alpine
+
+# Install dependencies
+RUN apk --no-cache --update add curl nano \
+    libpng-dev \
+    libzip-dev \
+    zlib-dev \
+    unzip \
+    zip \
+    git
+
+# Clear cache
+RUN rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
+
+# Install extensions
+RUN docker-php-ext-install gd pdo_mysql mysqli zip exif pcntl
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Add user for applications
+RUN addgroup -S www && adduser -S www -G www
+
+# # Copy existing application directory permissions
+COPY --chown=www:www . /www
+
+# # Change current user to www
+# USER setor7g
+
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
