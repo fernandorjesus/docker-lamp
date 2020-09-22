@@ -7,7 +7,7 @@ Um fluxo de trabalho bastante simplificado com [Docker compose](https://docs.doc
     - Installed php extensions : `gd pdo_mysql mysqli mbstring zip exif pcntl`
 2) NGINX (nginx:alpine)
 3) Mysql (mysql:latest)
-4) phpMyAdmin (phpmyadmin/phpmyadmin)
+4) phpMyAdmin (phpmyadmin:latest)
 
 # Configurando
 1) Clone
