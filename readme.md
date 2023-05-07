@@ -12,7 +12,7 @@ Um fluxo de trabalho bastante simplificado com [Docker compose](https://docs.doc
 # Configurando
 1) Clone
 ```bash
-$ git clone https://github.com/askaoru/LempFleet docker
+$ git clone git@github.com:fernandorjesus/docker-lamp.git docker
 ```
 2) Vá para o diretório e inicie os containers
 ```bash
