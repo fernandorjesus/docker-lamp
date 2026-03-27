@@ -1,9 +1,0 @@
-{
-    "name": "siteground/siteground-helper",
-    "autoload": {
-        "psr-4": {
-            "SiteGround_Helper\\": "src/"
-        }
-    },
-    "require": {}
-}
