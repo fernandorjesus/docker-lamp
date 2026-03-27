@@ -1,0 +1,107 @@
+/**
+ * HELPERS
+ * Some general classes
+ * --------------------------------------------------------------------------
+ * Author      : Setor7g - Fernando Jesus
+ * Contact     : setor7g@setor7g.com.br / +55 11 984.759.151
+ * --------------------------------------------------------------------------*/
+
+/* Clearfix
+---------------------------------------------------------------------------- */
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+
+/* @font-face
+-----------------------------------------------------------------------------*/
+@font-face {
+  font-family: "Century Gothic";
+  src: font-url("century-gothic-regular.eot"); /* IE9*/
+  src: font-url("century-gothic-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ font-url("century-gothic-regular.woff2") format("woff2"),
+    font-url("century-gothic-regular.woff") format("woff"),
+    font-url("century-gothic-regular.ttf") format("truetype"),
+    font-url("century-gothic-regular.svg#Century Gothic") format("svg");
+}
+
+@font-face {
+  font-family: "Century Gothic Bold";
+  src: font-url("century-gothic-bold.eot"); /* IE9*/
+  src: font-url("century-gothic-bold.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ font-url("century-gothic-bold.woff2") format("woff2"),
+    font-url("century-gothic-bold.woff") format("woff"),
+    font-url("century-gothic-bold.ttf") format("truetype"),
+    font-url("century-gothic-bold.svg#Century Gothic Bold") format("svg");
+}
+
+/* Font Stacks
+-----------------------------------------------------------------------------*/
+$regular: "Century Gothic", sans-serif;
+$bold: "Century Gothic Bold", sans-serif;
+
+/* Misc classes
+-----------------------------------------------------------------------------*/
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.underline {
+  border-bottom: 1px solid;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+.cl {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.first {
+  margin-left: 0;
+  padding-left: 0;
+}
+.last {
+  margin-right: 0;
+  padding-right: 0;
+}
+.top {
+  margin-top: 0;
+  padding-top: 0;
+}
+.bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.nolist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+hr.line {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}

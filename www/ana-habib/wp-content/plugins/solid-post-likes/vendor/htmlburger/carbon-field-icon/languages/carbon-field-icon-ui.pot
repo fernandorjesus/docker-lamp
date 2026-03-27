@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/main.js:272
+msgid "No icon selected"
+msgstr ""
+
+#: src/main.js:298
+msgid "Search icon ..."
+msgstr ""
+
+#: src/main.js:303
+msgid "Clear"
+msgstr ""
+
+#: src/main.js:337
+msgid "No results found"
+msgstr ""
